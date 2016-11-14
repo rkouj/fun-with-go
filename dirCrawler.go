@@ -1,26 +1,20 @@
 package main
 
 import (
-	//"fmt"
-	//"strings"
 	"io/ioutil"
 	"os"
-	//"path/filepath"
 	"fmt"
-	//"strings"
 	"path/filepath"
 	"time"
 )
 
 func main() {
-	//cwd, _ := os.Getwd()
 	cwd := "/usr/local/google/home/rkouj/go/src/k8s.io/kubernetes"
-	//fmt.Println(cwd)
 
 	t := time.Now()
 	filepath.Walk(cwd, count)
 	fmt.Println(time.Since(t))
-	key := "RAJAT"
+	key := "keyToSearch"
 	t = time.Now()
 	for _, file := range getFileAndDir(cwd) {
 		doit(file, cwd, key)
